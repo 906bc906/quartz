@@ -1,4 +1,4 @@
-name: Jacky Zhao
+name: 906bc906
 enableToc: true
 openToc: false
 enableLinkPreview: true
@@ -9,18 +9,14 @@ enableCallouts: true
 enableSPA: true
 enableFooter: true
 enableContextualBacklinks: true
-enableRecentNotes: false
+enableRecentNotes: true
 enableGitHubEdit: true
 GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
 enableSemanticSearch: false
 operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
-description:
-  Host your second brain and digital garden for free. Quartz features extremely fast full-text search,
-  Wikilink support, backlinks, local graph, tags, and link previews.
+description: Digital Garden powered with Obsidian + Quartz + Github
 page_title:
-  "🪴 Quartz 3.3"
+  "906bc906 Vault"
 links:
-  - link_name: Twitter
-    link: https://twitter.com/_jzhao
   - link_name: Github
-    link: https://github.com/jackyzha0
+    link: https://github.com/906bc906
