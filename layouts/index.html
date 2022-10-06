@@ -5,6 +5,7 @@
 <body>
 {{partial "search.html" .}}
 <div class="singlePage">
+    
     <!-- Begin actual content -->
     {{partial "header.html" .}}
     <article>
@@ -13,15 +14,12 @@
         {{if $.Site.Data.config.enableRecentNotes}}
           {{partial "recent.html" . }}
         {{end}}
+        
     </article>
-    <script src="https://utteranc.es/client.js"
-        repo="906bc906/quartz"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
+    {{partial "comment.html" .}}
     {{partial "footerIndex.html" .}}
+    
 </div>
+
 </body>
 </html>
