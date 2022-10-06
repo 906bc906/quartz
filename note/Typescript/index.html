@@ -1,0 +1,243 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="[tags::[[to do]]]
+TARGET DECK 전체::개발::typescript
+ https://www.typescriptlang.org/
+자바스크립트로 빌드하는 강타입 언어.
+설치 및 실행 일반적으로는, 타입스크립트 ts 파일을 자바스크립트 파일로 컴파일하고 그것을 실행하는 방식으로 진행한다."><title>906bc906 Vault</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://906bc906.github.io/quartz//icon.png><link href=https://906bc906.github.io/quartz/styles.7153093e4d1bbb584a28469cadfa3f88.min.css rel=stylesheet><link href=https://906bc906.github.io/quartz/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://906bc906.github.io/quartz/js/darkmode.dfe358ce1dace5b00131e7d4d76adce9.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/util.9825137f5e7825e8553c68ce39ac9e44.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://906bc906.github.io/quartz/js/popover.53ad9a087e3feeaaa12b63bfd02d923b.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://906bc906.github.io/quartz/",fetchData=Promise.all([fetch("https://906bc906.github.io/quartz/indices/linkIndex.1fb45bb1acd5477013379d8631e9fd64.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://906bc906.github.io/quartz/indices/contentIndex.6f2067a72775757f9c2d2fb035e23d13.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://906bc906.github.io/quartz",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://906bc906.github.io/quartz",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/906bc906.github.io\/quartz\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://906bc906.github.io/quartz/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://906bc906.github.io/quartz/>906bc906 Vault</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><p class=meta>Last updated
+Unknown
+<a href=https://github.com/jackyzha0/quartz/tree/hugo/content/note/Typescript.md rel=noopener>Edit Source</a></p><ul class=tags></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#설치-및-실행>설치 및 실행</a><ol><li><a href=#ts-node>ts-node</a></li><li><a href=#빌드-툴>빌드 툴</a><ol><li><a href=#vite>Vite</a></li></ol></li></ol></li><li><a href=#tsconfigjson>tsconfig.json</a><ol><li><a href=#noimplicitany>noImplicitAny</a></li><li><a href=#strictnullchecks>strictNullChecks</a></li></ol></li><li><a href=#vscode-extension>VScode extension</a></li><li><a href=#문법>문법</a><ol><li><a href=#타입-추론>타입 추론</a></li><li><a href=#변수-타입-지정>변수 타입 지정</a><ol><li><a href=#union-type>union type</a></li><li><a href=#type-alias>type alias</a></li><li><a href=#interface>interface</a></li><li><a href=#function-type>function type</a></li><li><a href=#array-tuple>Array tuple</a></li><li><a href=#class>class</a></li></ol></li></ol></li><li><a href=#handbook>Handbook</a></li><li><a href=#to-do>to do</a></li><li><a href=#참고>참고</a></li></ol></nav></details></aside><p>[tags::<a class="internal-link broken">to do]</a></p><p>TARGET DECK
+전체::개발::typescript</p><p><a href=https://www.typescriptlang.org/ rel=noopener>https://www.typescriptlang.org/</a></p><p>자바스크립트로 빌드하는 강타입 언어.</p><a href=#설치-및-실행><h2 id=설치-및-실행><span class=hanchor arialabel=Anchor># </span>설치 및 실행</h2></a><p>일반적으로는, 타입스크립트 <code>ts</code> 파일을 자바스크립트 파일로 컴파일하고 그것을 실행하는 방식으로 진행한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>npm install typescript -D
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>npx tsc hello.ts
+</span></span><span class=line><span class=cl>node hello.js
+</span></span></code></pre></td></tr></table></div></div><p>typescript 패키지에는 컴파일러(tsc)가 포함되어있으며 npx tsc 로 ts 파일을 js로 컴파일할 수 있다. (전역으로 설치했다면 npx 안 써도 됨)</p><p>Q. 타입스크립트의 타입 표기는 프로그램의 런타임 동작을 수정하는가?</p><p>A. 전혀 수정하지 않음.</p><a href=#ts-node><h3 id=ts-node><span class=hanchor arialabel=Anchor># </span>ts-node</h3></a><p>컴파일 한 후 node로 실행하는 것이 번거롭다면 ts-node를 사용해볼 수 있다.</p><p><a href=https://www.npmjs.com/package/ts-node rel=noopener>https://www.npmjs.com/package/ts-node</a></p><p>ts-node는 실행하면서 ts를 js로 즉시 전환해준다. 즉, 위의 tsc -> node 과정을,</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ts-node hello.ts
+</span></span></code></pre></td></tr></table></div></div><p>와 같이 생략할 수 있다.</p><p>nodemon과 같이 사용할 수도 있다.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> 개발에 사용하면 편리.</p><p>ts-node-dev 라는 모듈도 있다.<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p><p>하지만 컴파일러를 메모리 위에 올려두고 동작하는 특성상 production에서는 사용하지 않는 것이 좋다.<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup></p><a href=#빌드-툴><h3 id=빌드-툴><span class=hanchor arialabel=Anchor># </span>빌드 툴</h3></a><p><a href=https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html rel=noopener>https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html</a></p><p>여러가지 빌드 툴을 이용하여 빌드할 수 있다.</p><a href=#vite><h4 id=vite><span class=hanchor arialabel=Anchor># </span>Vite</h4></a><p>Vite는 <code>.ts</code> 파일을 즉시 import 하는 것을 지원한다. 단, 타입 확인은 하지 않아 <code>tsc --noEmit</code> 등 빌드 과정에서 확인해야 함. <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup></p><p>또한 TS 컴파일러 옵션 중 <code>isolatedModules</code> 가 무조건 <code>true</code> 로 설정되어야 한다.</p><a href=#tsconfigjson><h2 id=tsconfigjson><span class=hanchor arialabel=Anchor># </span>tsconfig.json</h2></a><p><a href=https://www.typescriptlang.org/ko/docs/handbook/tsconfig-json.html rel=noopener>TypeScript: Documentation - What is a tsconfig.json</a></p><a href=#noimplicitany><h3 id=noimplicitany><span class=hanchor arialabel=Anchor># </span>noImplicitAny</h3></a><p>몇몇 경우 TS는 값의 타입을 추론하지 않고 any로 간주하는데, 위 플래그를 활성화하면 이런 암묵적 any 추론에 대하여 오류를 발생함.</p><a href=#strictnullchecks><h3 id=strictnullchecks><span class=hanchor arialabel=Anchor># </span>strictNullChecks</h3></a><p>null, undefined를 보다 명시적으로 처리. null 혹은 undefined 갑을 참조하는 것을 방지함.</p><p><a href=https://ohhako.github.io/kimhako/articles/2020-07/Angular-strictNullChecks-post-copy rel=noopener>[TypeScript] strictNullChecks과 Type Guards를 이용한 안전한 코드 | kimhako</a></p><a href=#vscode-extension><h2 id=vscode-extension><span class=hanchor arialabel=Anchor># </span>VScode extension</h2></a><p><a href=https://inpa.tistory.com/entry/VSCode-%F0%9F%92%BD-TypeScript-%EC%BD%94%EB%94%A9%ED%95%98%EB%8A%94%EB%8D%B0-%EC%9C%A0%EC%9A%A9%ED%95%9C-%ED%99%95%EC%9E%A5%ED%8C%A9-%F0%9F%92%AF-%EC%B6%94%EC%B2%9C rel=noopener>[VSCode] 💽 TypeScript 코딩하는데 유용한 확장팩 💯 추천</a></p><a href=#문법><h2 id=문법><span class=hanchor arialabel=Anchor># </span>문법</h2></a><a href=#타입-추론><h3 id=타입-추론><span class=hanchor arialabel=Anchor># </span>타입 추론</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-ts data-lang=ts><span class=line><span class=cl><span class=kd>let</span> <span class=nx>msg</span> <span class=o>=</span> <span class=s2>&#34;hello there!&#34;</span> <span class=c1>//msg: string
+</span></span></span></code></pre></td></tr></table></div></div><p>값으로부터 추론되는 것들은 굳이 타입 표기를 적지 않는 것이 가장 좋다.</p><a href=#변수-타입-지정><h3 id=변수-타입-지정><span class=hanchor arialabel=Anchor># </span>변수 타입 지정</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>name</span>:<span class=kt>string</span> <span class=o>=</span> <span class=s2>&#34;aaa&#34;</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>names</span>:<span class=kt>string</span><span class=p>[]</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;aaa&#34;</span><span class=p>,</span> <span class=s2>&#34;bbb&#34;</span><span class=p>];</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>name</span><span class=o>:</span><span class=p>{</span><span class=nx>firstName</span>:<span class=kt>string</span><span class=p>,</span> <span class=nx>middleName?</span>:<span class=kt>string</span><span class=p>,</span> <span class=nx>lastName</span>:<span class=kt>string</span><span class=p>}</span> <span class=o>=</span> <span class=p>{</span><span class=nx>firstName</span><span class=o>:</span><span class=s2>&#34;Cheolsu&#34;</span><span class=p>,</span> <span class=nx>lastName</span><span class=o>:</span><span class=s2>&#34;Kim&#34;</span><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#union-type><h4 id=union-type><span class=hanchor arialabel=Anchor># </span>union type</h4></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kd>let</span> <span class=nx>codeNumber</span>:<span class=kt>string</span><span class=o>|</span><span class=kt>number</span> <span class=o>=</span> <span class=mi>123</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#type-alias><h4 id=type-alias><span class=hanchor arialabel=Anchor># </span>type alias</h4></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>type</span> <span class=nx>NewType</span> <span class=o>=</span> <span class=kt>string</span> <span class=o>|</span> <span class=kt>string</span><span class=p>[];</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>varname</span>:<span class=kt>NewType</span> <span class=o>=</span> <span class=s2>&#34;value&#34;</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#interface><h4 id=interface><span class=hanchor arialabel=Anchor># </span>interface</h4></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>User</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>name</span>: <span class=kt>string</span>
+</span></span><span class=line><span class=cl>  <span class=nx>age</span>: <span class=kt>number</span>
+</span></span><span class=line><span class=cl>  <span class=nx>gender?</span> : <span class=kt>string</span>
+</span></span><span class=line><span class=cl>  <span class=kr>readonly</span> <span class=nx>birthYear</span> : <span class=kt>number</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>key</span>:<span class=kt>number</span><span class=p>]</span> <span class=o>:</span> <span class=kt>string</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>user</span> : <span class=kt>User</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>name</span> <span class=o>:</span> <span class=s1>&#39;xx&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>age</span> : <span class=kt>30</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>birthYear</span> : <span class=kt>2000</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=mi>1</span> <span class=o>:</span> <span class=s1>&#39;A&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=mi>2</span> <span class=o>:</span> <span class=s1>&#39;B&#39;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>Add</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nx>num1</span>:<span class=kt>number</span><span class=p>,</span> <span class=nx>num2</span>:<span class=kt>number</span><span class=p>)</span><span class=o>:</span> <span class=kt>number</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>add</span> : <span class=kt>Add</span> <span class=o>=</span> <span class=kd>function</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=nx>y</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>x</span> <span class=o>+</span> <span class=nx>y</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#interface-extends><h5 id=interface-extends><span class=hanchor arialabel=Anchor># </span>interface extends</h5></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>Car</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>color</span>: <span class=kt>string</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>Toy</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>name</span> : <span class=kt>string</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>ToyCar</span> <span class=kr>extends</span> <span class=nx>Car</span><span class=p>,</span> <span class=nx>Toy</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>price</span>: <span class=kt>number</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#function-type><h4 id=function-type><span class=hanchor arialabel=Anchor># </span>function type</h4></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>makeDouble</span><span class=p>(</span><span class=nx>x</span>: <span class=kt>number</span><span class=p>)</span> <span class=o>:</span><span class=kt>number</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>x</span><span class=o>*</span><span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#generic><h5 id=generic><span class=hanchor arialabel=Anchor># </span>Generic</h5></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>getSize</span><span class=p>&lt;</span><span class=nt>T</span><span class=p>&gt;(</span><span class=nx>arr</span>: <span class=kt>T</span><span class=p>[])</span><span class=o>:</span> <span class=kt>number</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>arr</span><span class=p>.</span><span class=nx>length</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>getSize</span><span class=p>([</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]));</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>getSize</span><span class=p>&lt;</span><span class=nt>string</span><span class=p>&gt;([</span><span class=s2>&#34;1&#34;</span><span class=p>,</span> <span class=s2>&#34;2&#34;</span><span class=p>,</span> <span class=s2>&#34;3&#34;</span><span class=p>]));</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#array-tuple><h4 id=array-tuple><span class=hanchor arialabel=Anchor># </span>Array tuple</h4></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>type</span> <span class=nx>Member</span> <span class=o>=</span> <span class=p>[</span><span class=kt>number</span><span class=p>,</span> <span class=kr>boolean</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>john</span>:<span class=kt>Member</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=kc>true</span><span class=p>];</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#class><h4 id=class><span class=hanchor arialabel=Anchor># </span>class</h4></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>class</span> <span class=nx>User</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>name</span>:<span class=kt>string</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kr>constructor</span><span class=p>(</span><span class=nx>name</span>:<span class=kt>string</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=k>this</span><span class=p>.</span><span class=nx>name</span> <span class=o>=</span> <span class=nx>name</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#class-implements-with-interface><h5 id=class-implements-with-interface><span class=hanchor arialabel=Anchor># </span>class implements with interface</h5></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>Car</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>color</span>: <span class=kt>string</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>wheels</span>: <span class=kt>number</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>start</span><span class=p>()</span><span class=o>:</span> <span class=k>void</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>class</span> <span class=nx>Bmw</span> <span class=kr>implements</span> <span class=nx>Car</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>color</span>: <span class=kt>string</span><span class=p>;</span><span class=nx>wheels</span> <span class=o>=</span> <span class=mi>4</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kr>constructor</span><span class=p>(</span><span class=nx>c</span>: <span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>this</span><span class=p>.</span><span class=nx>color</span> <span class=o>=</span> <span class=nx>c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=nx>start() {</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;go..&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#type-전용-imports-exports><h5 id=type-전용-imports-exports><span class=hanchor arialabel=Anchor># </span>type 전용 imports, exports</h5></a><p>&ldquo;./some-module.js&rdquo; 에서 SomeThing 타입만 import 하고 싶은 경우 어떻게 해야 합니까?</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>import</span> <span class=kr>type</span> <span class=p>{</span> <span class=nx>SomeThing</span> <span class=p>}</span> <span class=kr>from</span> <span class=s2>&#34;./some-module.js&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kr>type</span> <span class=p>{</span> <span class=nx>SomeThing</span> <span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><p>typescript에서, interface와 type alias의 차이점은 무엇입니까?</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>Point</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>x</span>: <span class=kt>number</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>y</span>: <span class=kt>number</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>type</span> <span class=nx>Point</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>x</span>: <span class=kt>number</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>y</span>: <span class=kt>number</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><ol><li>오브젝트의 모양을 기술하기 위해 사용될 수 있으나 신택스가 다르다.</li><li>인터페이스와 다르게, type alias는 primitives, union, tuple 에도 사용될 수 있다.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=c1>// primitive
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>type</span> <span class=nx>Name</span> <span class=o>=</span> <span class=kt>string</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// object
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>type</span> <span class=nx>PartialPointX</span> <span class=o>=</span> <span class=p>{</span> <span class=nx>x</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=kr>type</span> <span class=nx>PartialPointY</span> <span class=o>=</span> <span class=p>{</span> <span class=nx>y</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// union
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>type</span> <span class=nx>PartialPoint</span> <span class=o>=</span> <span class=nx>PartialPointX</span> <span class=o>|</span> <span class=nx>PartialPointY</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// tuple
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>type</span> <span class=nx>Data</span> <span class=o>=</span> <span class=p>[</span><span class=kt>number</span><span class=p>,</span> <span class=kt>string</span><span class=p>];</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>확장을 위한 신택스가 다르다.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>PartialPointX</span> <span class=p>{</span> <span class=nx>x</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kr>interface</span> <span class=nx>Point</span> <span class=kr>extends</span> <span class=nx>PartialPointX</span> <span class=p>{</span> <span class=nx>y</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>type</span> <span class=nx>PartialPointX</span> <span class=o>=</span> <span class=p>{</span> <span class=nx>x</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=kr>type</span> <span class=nx>Point</span> <span class=o>=</span> <span class=nx>PartialPointX</span> <span class=o>&amp;</span> <span class=p>{</span> <span class=nx>y</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>type alias에서 union 사용 시 class implement에 사용할 수 없다.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-typescript data-lang=typescript><span class=line><span class=cl><span class=kr>type</span> <span class=nx>PartialPoint</span> <span class=o>=</span> <span class=p>{</span> <span class=nx>x</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>}</span> <span class=o>|</span> <span class=p>{</span> <span class=nx>y</span>: <span class=kt>number</span><span class=p>;</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// FIXME: can not implement a union type
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>class</span> <span class=nx>SomePartialPoint</span> <span class=kr>implements</span> <span class=nx>PartialPoint</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>x</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>y</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><a href=https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript rel=noopener>Interfaces vs Types in TypeScript - Stack Overflow</a></p><p><a href=https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces rel=noopener>TypeScript: Documentation - Everyday Types</a></p><a href=#handbook><h2 id=handbook><span class=hanchor arialabel=Anchor># </span>Handbook</h2></a><p><a href=https://www.typescriptlang.org/docs/handbook/intro.html rel=noopener>TypeScript: Handbook - The TypeScript Handbook</a></p><p>프로그래밍 커뮤니티에 소개된 지 20년이 지나, 자바스크립트는 가장 널리 퍼진 크로스 플랫폼 언어가 되었다. 웹페이지에 사소한 상호작용을 넣기 위한 작은 스크립팅 언어로 시작하여, 자바스크립트는 규모에 상관없이, 프트엔드든 백엔드든 선택할 수 있는 언어까지 성장했습니다.</p><a href=#to-do><h2 id=to-do><span class=hanchor arialabel=Anchor># </span>to do</h2></a><p>abstract class
+접근 제한자 (public, private, protected)</p><p><a href=https://www.typescriptlang.org/docs/handbook/2/narrowing.html rel=noopener>https://www.typescriptlang.org/docs/handbook/2/narrowing.html</a></p><p><a href="https://www.youtube.com/watch?v=17Oh028Jpis&list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&index=6" rel=noopener>https://www.youtube.com/watch?v=17Oh028Jpis&list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0&index=6</a></p><p>유틸리티 타입</p><ul><li>keyof</li><li>partial</li><li>required</li><li>readonly</li></ul><a href=#참고><h2 id=참고><span class=hanchor arialabel=Anchor># </span>참고</h2></a><ul><li><a href=https://github.com/basarat/typescript-book rel=noopener>https://github.com/basarat/typescript-book</a><ul><li>타입스크립트</li></ul></li><li><a href=https://github.com/type-challenges/type-challenges rel=noopener>type-challenges/type-challenges: Collection of TypeScript type challenges with online judge</a><ul><li>타입 정의 문제들</li></ul></li><li></li></ul><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p><a href=https://velog.io/@grinding_hannah/TypeScript-nodemon-ts-node-%EB%AA%A8%EB%93%88-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0 rel=noopener>[TypeScript] nodemon, ts-node 모듈 설치하기</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2 role=doc-endnote><p><a href="https://www.youtube.com/watch?v=6hz8EX9QhCg" rel=noopener>https://www.youtube.com/watch?v=6hz8EX9QhCg</a> <code>-r tsconfig-paths/register</code>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3 role=doc-endnote><p><a href=https://inpa.tistory.com/entry/TS-%F0%9F%93%98-TypeScript-%EC%86%8C%EA%B0%9C-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95-%EC%B4%9D%EC%A0%95%EB%A6%AC-tsconfig rel=noopener>[TS] 📘 TypeScript 소개 & 개발 환경 구성하기</a>&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4 role=doc-endnote><p><a href=https://blog.siner.io/2022/02/19/node-vs-ts-node/ rel=noopener>node와 ts-node의 CPU,RAM 사용량 비교</a>&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5 role=doc-endnote><p><a href=https://vitejs.dev/guide/features.html#typescript rel=noopener>Features | Vite</a>&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://906bc906.github.io/quartz/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by 906bc906 using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=https://906bc906.github.io/quartz/>Home</a></li><li><a href=https://github.com/906bc906>Github</a></li></ul></footer></div></div></body></html>
