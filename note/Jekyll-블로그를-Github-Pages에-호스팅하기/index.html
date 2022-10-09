@@ -1,0 +1,120 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="이 문서는 우분투 기준으로 작성되었음.
+다른 OS의 경우 아래 링크 보고 하세요.
+ https://jekyllrb.com/docs/installation/
+requirements  https://jekyllrb.com/docs/installation/#requirements
+Pop!_os 기준임.
+Ruby 2."><title>Jekyll 블로그를 Github Pages에 호스팅하기</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://906bc906.github.io/quartz//icon.png><link href=https://906bc906.github.io/quartz/styles.7153093e4d1bbb584a28469cadfa3f88.min.css rel=stylesheet><link href=https://906bc906.github.io/quartz/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://906bc906.github.io/quartz/js/darkmode.dfe358ce1dace5b00131e7d4d76adce9.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/util.9825137f5e7825e8553c68ce39ac9e44.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://906bc906.github.io/quartz/js/popover.53ad9a087e3feeaaa12b63bfd02d923b.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://906bc906.github.io/quartz/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://906bc906.github.io/quartz/",fetchData=Promise.all([fetch("https://906bc906.github.io/quartz/indices/linkIndex.cc340bae3a5198cafd815125fd6f4424.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://906bc906.github.io/quartz/indices/contentIndex.89abef50d097a3cad5a0676d6bac537d.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://906bc906.github.io/quartz",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://906bc906.github.io/quartz",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/906bc906.github.io\/quartz\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://906bc906.github.io/quartz/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://906bc906.github.io/quartz/>906bc906 Vault</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>Jekyll 블로그를 Github Pages에 호스팅하기</h1><p class=meta>Last updated
+Oct 10, 2022
+<a href=https://github.com/jackyzha0/quartz/tree/hugo/content/note/Jekyll%20%eb%b8%94%eb%a1%9c%ea%b7%b8%eb%a5%bc%20Github%20Pages%ec%97%90%20%ed%98%b8%ec%8a%a4%ed%8c%85%ed%95%98%ea%b8%b0.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://906bc906.github.io/quartz/tags/todo/>Todo</a></li></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#requirements>requirements</a><ol><li><a href=#ruby>Ruby</a></li><li><a href=#rubygems>RubyGems</a></li><li><a href=#gcc-and-make>GCC and Make</a></li></ol></li><li><a href=#install-dependencies>install dependencies</a></li><li><a href=#디렉토리-세팅-안해도-됨>디렉토리 세팅 (안해도 됨)</a></li><li><a href=#테마-선택>테마 선택</a></li><li><a href=#겪은-문제>겪은 문제</a><ol><li><a href=#파일명>파일명</a></li><li><a href=#rss-sitemap>RSS, Sitemap</a></li><li><a href=#댓글>댓글</a></li></ol></li></ol></nav></details></aside><p>이 문서는 우분투 기준으로 작성되었음.</p><p>다른 OS의 경우 아래 링크 보고 하세요.</p><p><a href=https://jekyllrb.com/docs/installation/ rel=noopener>https://jekyllrb.com/docs/installation/</a></p><a href=#requirements><h2 id=requirements><span class=hanchor arialabel=Anchor># </span>requirements</h2></a><p><a href=https://jekyllrb.com/docs/installation/#requirements rel=noopener>https://jekyllrb.com/docs/installation/#requirements</a></p><p>Pop!_os 기준임.</p><a href=#ruby><h3 id=ruby><span class=hanchor arialabel=Anchor># </span>Ruby</h3></a><p>2.5.0 이상이어야 함.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ruby -v <span class=c1># 설치됐는지 확인</span>
+</span></span></code></pre></td></tr></table></div></div><p><a href=https://www.ruby-lang.org/en/documentation/installation/#apt rel=noopener>https://www.ruby-lang.org/en/documentation/installation/#apt</a></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt install ruby-full
+</span></span></code></pre></td></tr></table></div></div><a href=#rubygems><h3 id=rubygems><span class=hanchor arialabel=Anchor># </span>RubyGems</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>gem -v <span class=c1># 설치됐는지 확인</span>
+</span></span></code></pre></td></tr></table></div></div><p>루비를 설치했으면 gem 도 기본적으로 설치되어있을 것.</p><a href=#gcc-and-make><h3 id=gcc-and-make><span class=hanchor arialabel=Anchor># </span>GCC and Make</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>gcc -v
+</span></span><span class=line><span class=cl>g++ -v
+</span></span><span class=line><span class=cl>make -v <span class=c1># 각각 설치 됐는지 확인</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#install-dependencies><h2 id=install-dependencies><span class=hanchor arialabel=Anchor># </span>install dependencies</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo apt-get install ruby-full build-essential zlib1g-dev
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;# Install Ruby Gems to ~/gems&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;export GEM_HOME=&#34;$HOME/gems&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;export PATH=&#34;$HOME/gems/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span class=line><span class=cl><span class=nb>source</span> ~/.bashrc
+</span></span><span class=line><span class=cl>gem install jekyll bundler
+</span></span></code></pre></td></tr></table></div></div><a href=#디렉토리-세팅-안해도-됨><h2 id=디렉토리-세팅-안해도-됨><span class=hanchor arialabel=Anchor># </span>디렉토리 세팅 (안해도 됨)</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>mkdir jekyll <span class=c1># jekyll 이라는 디렉토리 생성</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> jekyll <span class=c1># 방금 만든 jekyll 디렉토리로 이동</span>
+</span></span><span class=line><span class=cl>jekyll new ./ <span class=c1># 새로운 jekyll 사이트 생성</span>
+</span></span><span class=line><span class=cl>bundle add webrick <span class=c1># webrick 젬 추가 (webrick이 기본이었으나 빠져서 추가 안하면 오류 생길 수 있음)</span>
+</span></span><span class=line><span class=cl>bundle install <span class=c1># 젬 설치</span>
+</span></span><span class=line><span class=cl>bundle <span class=nb>exec</span> jekyll serve <span class=c1># jekyll 로컬 서버 실행</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>Configuration file: /home/laptop/repos/jekyll/_config.yml
+</span></span><span class=line><span class=cl>            Source: /home/laptop/repos/jekyll
+</span></span><span class=line><span class=cl>       Destination: /home/laptop/repos/jekyll/_site
+</span></span><span class=line><span class=cl> Incremental build: disabled. Enable with --incremental
+</span></span><span class=line><span class=cl>      Generating... 
+</span></span><span class=line><span class=cl>       Jekyll Feed: Generating feed <span class=k>for</span> posts
+</span></span><span class=line><span class=cl>                    <span class=k>done</span> in 0.254 seconds.
+</span></span><span class=line><span class=cl> Auto-regeneration: enabled <span class=k>for</span> <span class=s1>&#39;/home/laptop/repos/jekyll&#39;</span>
+</span></span><span class=line><span class=cl>    Server address: http://127.0.0.1:4000/
+</span></span><span class=line><span class=cl>  Server running... press ctrl-c to stop.
+</span></span></code></pre></td></tr></table></div></div><p><code>Server address</code> 에 적힌 주소를 통해 로컬에서 테스트할 수 있음</p><p><img src=https://906bc906.github.io/quartz//attachments/Pasted%20image%2020221008215645.png width=auto alt></p><p>테마를 그냥 포크해서 쓰면 그만이라 새로 init할 필요가 없었다.</p><a href=#테마-선택><h2 id=테마-선택><span class=hanchor arialabel=Anchor># </span>테마 선택</h2></a><p><a href=https://github.com/ghosind/Jekyll-Paper-Github rel=noopener>https://github.com/ghosind/Jekyll-Paper-Github</a></p><p>깔끔해서 좋다. 딱 내가 원하던 모습.</p><a href=#겪은-문제><h2 id=겪은-문제><span class=hanchor arialabel=Anchor># </span>겪은 문제</h2></a><a href=#파일명><h3 id=파일명><span class=hanchor arialabel=Anchor># </span>파일명</h3></a><p>무조건 date가 앞에 들어가야 한다.</p><p>이에 대한 대안은 posts가 아니라 collections를 쓰는 것인데 paginator가 collections을 지원 안한다. ㅎㅎ</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># _config.yml</span>
+</span></span><span class=line><span class=cl>collections:
+</span></span><span class=line><span class=cl>  pages:
+</span></span><span class=line><span class=cl>    output: <span class=nb>true</span>
+</span></span><span class=line><span class=cl>    permalink: /:collection/:path.md
+</span></span></code></pre></td></tr></table></div></div><p>우선 collections 를 등록했다. <code>./_pages</code> 디렉토리에 대응한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;container-posts&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  {% for post in site[&#34;pages&#34;] reversed %}
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;posts-list-item&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;posts-list-item-name float-left&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>a</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;{{ post.url }}&#34;</span><span class=p>&gt;</span>{{ post.title }}<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;posts-list-item-date float-right&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      {{ post.date | date: &#39;%Y-%m-%d&#39; }}
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  {% endfor %}
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>_includes</code> 디렉토리에 페이지네이터 레이아웃 역할을 하는 <code>posts.html</code> 이 있길래 긁어와서 <code>pages</code> 컬렉션 용으로 수정하고 <code>pages.html</code> 로 저장했다.</p><p>별도의 정렬을 안 해도 생성 일자 기준으로 가장 먼저 생성된 순으로 정렬되기에 그대로 가져다 써서 <code>reversed</code>만 붙여줬다. (가장 최근에 생성된 것을 우선해서 보여주기 위해&mldr;)</p><p>페이지네이터까지 구현하는건 너무 귀찮을 것 같아서 때려쳤다.</p><a href=#rss-sitemap><h3 id=rss-sitemap><span class=hanchor arialabel=Anchor># </span>RSS, Sitemap</h3></a><p>테마에서 RSS, Sitemap 을 지원한다.</p><p><code>/feed.xml</code> 과 <code>/sitemap.xml</code> 로 대응하는데, 문제는 RSS feed가 컬렉션을 출력을 안 한다.</p><p><a href=https://github.com/jekyll/jekyll-feed#collections rel=noopener>https://github.com/jekyll/jekyll-feed#collections</a></p><p>feed 플러그인에서 관련 내용을 확인한다.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yml data-lang=yml><span class=line><span class=cl><span class=nt>feed</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>collections</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>pages</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><p>나는 pages 컬렉션을 사용하므로 <code>_config.yml</code> 에 해당 내용을 추가했다. rss 출력은 <code>/feed/pages.xml</code> 로 나온다. 통합 피드는 안 되는듯.</p><a href=#댓글><h3 id=댓글><span class=hanchor arialabel=Anchor># </span>댓글</h3></a><p>utterances 와 giscus</p></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://906bc906.github.io/quartz/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by 906bc906 using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=https://906bc906.github.io/quartz/>Home</a></li><li><a href=https://github.com/906bc906>Github</a></li></ul></footer></div><div><script src=https://utteranc.es/client.js repo=906bc906/quartz issue-term=pathname theme=github-light crossorigin=anonymous async></script></div></div></body></html>
